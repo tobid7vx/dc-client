@@ -9,9 +9,9 @@ set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS 1)
 add_subdirectory(cmake_discord_game_sdk cmake_discord_game_sdk)
 add_subdirectory(NImGui NImGui)
 
-add_executable(${PROJECT_NAME} icon.rc utc.cpp main.cpp)
+add_executable(${PROJECT_NAME} source/icon.rc source/utc.cpp source/main.cpp)
 
-target_include_directories(${PROJECT_NAME} PUBLIC . cmake_discord_game_sdk NImGui)
+target_include_directories(${PROJECT_NAME} PUBLIC source cmake_discord_game_sdk NImGui)
 
 target_link_libraries(${PROJECT_NAME} PUBLIC cmake_discord_game_sdk NImGui)
 
