@@ -1,0 +1,6 @@
+[submodule "NImGui"]
+	path = NImGui
+	url = https://github.com/tobid7vx/NImGui
+[submodule "cmake_discord_game_sdk"]
+	path = cmake_discord_game_sdk
+	url = https://github.com/SylEze/cmake_discord_game_sdk.git
