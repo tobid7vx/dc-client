@@ -12,7 +12,6 @@
 #include <utility>
 #include <vector>
 
-
 namespace INI {
 namespace INIStringUtil {
 const char *const whitespaceDelimiters = " \t\n\r\f\v";

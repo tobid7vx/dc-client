@@ -5,6 +5,8 @@ namespace tmUtil {
 int const tm_yearCorrection = -1900;
 int const tm_monthCorrection = -1;
 int const tm_isdst_dontKnow = -1;
+int const tm_ryearCorrection = +1900;
+int const tm_rmonthCorrection = +1;
 
 #if !defined(DEBUG_DATETIME_TIMEGM_ENVVARTZ) &&                                \
     !(defined(UNIX) && !defined(DEBUG_DATETIME_TIMEGM))
@@ -35,5 +37,60 @@ time_t utcnow() {
   std::time_t t = std::time(0); // get time now
   std::tm *now = std::localtime(&t);
   std::time_t res = std::mktime(now);
+  return res;
+}
+
+std::vector<int> GetYearList() {
+  std::vector<int> res;
+  std::time_t t = std::time(0); // get time now
+  std::tm *now = std::localtime(&t);
+  for (int i = 1990; i < now->tm_year + 1; i++) {
+    res.push_back(i);
+  }
+  return res;
+}
+
+std::vector<int> GetMonthList() {
+  std::vector<int> res;
+  for (int i = 1; i < 13; i++) {
+    res.push_back(i);
+  }
+  return res;
+}
+
+std::vector<int> GetDayList() {
+  std::vector<int> res;
+  for (int i = 1; i < 32; i++) {
+    res.push_back(i);
+  }
+  return res;
+}
+
+std::vector<int> GetHourList(bool ampm) {
+  std::vector<int> res;
+  for (int i = 0; i < /*ampm ? 13 : */ 24; i++) {
+    res.push_back(i);
+  }
+  return res;
+}
+
+std::vector<int> GetMinSecList() {
+  std::vector<int> res;
+  for (int i = 0; i < 60; i++) {
+    res.push_back(i);
+  }
+  return res;
+}
+
+CTIME_Z GetCurrentTime() {
+  CTIME_Z res;
+  std::time_t t = std::time(0); // get time now
+  std::tm *now = std::localtime(&t);
+  res.ye = now->tm_year + tmUtil::tm_ryearCorrection;
+  res.mo = now->tm_mon + tmUtil::tm_rmonthCorrection;
+  res.da = now->tm_mday;
+  res.h = now->tm_hour;
+  res.m = now->tm_min;
+  res.s = now->tm_sec;
   return res;
 }
