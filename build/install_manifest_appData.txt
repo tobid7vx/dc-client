@@ -1,0 +1,1 @@
+C:/Project33/dc/build/_CPack_Packages/win64/NSIS/dc-client-2.0.0-win64/appData/data/icon.png

@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=C:/Program Files/CMake/bin/cmake.exe;-P;C:/Project33/dc/build/_deps/discord_game_sdk-subbuild/discord_game_sdk-populate-prefix/src/discord_game_sdk-populate-stamp/download-discord_game_sdk-populate.cmake;COMMAND;C:/Program Files/CMake/bin/cmake.exe;-P;C:/Project33/dc/build/_deps/discord_game_sdk-subbuild/discord_game_sdk-populate-prefix/src/discord_game_sdk-populate-stamp/verify-discord_game_sdk-populate.cmake;COMMAND;C:/Program Files/CMake/bin/cmake.exe;-P;C:/Project33/dc/build/_deps/discord_game_sdk-subbuild/discord_game_sdk-populate-prefix/src/discord_game_sdk-populate-stamp/extract-discord_game_sdk-populate.cmake
+source_dir=C:/Project33/dc/build/_deps/discord_game_sdk-src
+work_dir=C:/Project33/dc/build/_deps
+url(s)=https://dl-game-sdk.discordapp.net/2.5.6/discord_game_sdk.zip
+hash=
+no_extract=
+

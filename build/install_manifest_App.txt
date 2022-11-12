@@ -1,0 +1,10 @@
+C:/Project33/dc/build/_CPack_Packages/win64/NSIS/dc-client-2.0.0-win64/App/./dc-client.exe
+C:/Project33/dc/build/_CPack_Packages/win64/NSIS/dc-client-2.0.0-win64/App/./msvcp140.dll
+C:/Project33/dc/build/_CPack_Packages/win64/NSIS/dc-client-2.0.0-win64/App/./msvcp140_1.dll
+C:/Project33/dc/build/_CPack_Packages/win64/NSIS/dc-client-2.0.0-win64/App/./msvcp140_2.dll
+C:/Project33/dc/build/_CPack_Packages/win64/NSIS/dc-client-2.0.0-win64/App/./msvcp140_atomic_wait.dll
+C:/Project33/dc/build/_CPack_Packages/win64/NSIS/dc-client-2.0.0-win64/App/./msvcp140_codecvt_ids.dll
+C:/Project33/dc/build/_CPack_Packages/win64/NSIS/dc-client-2.0.0-win64/App/./vcruntime140_1.dll
+C:/Project33/dc/build/_CPack_Packages/win64/NSIS/dc-client-2.0.0-win64/App/./vcruntime140.dll
+C:/Project33/dc/build/_CPack_Packages/win64/NSIS/dc-client-2.0.0-win64/App/./concrt140.dll
+C:/Project33/dc/build/_CPack_Packages/win64/NSIS/dc-client-2.0.0-win64/App/./discord_game_sdk.dll

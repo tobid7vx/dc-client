@@ -1,0 +1,64 @@
+cmake_minimum_required(VERSION 3.22.2)
+
+project(dc-client)
+
+set (CMAKE_CXX_STANDARD 20)
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS 1)
+#set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${PROJECT_NAME})
+
+add_subdirectory(cmake_discord_game_sdk cmake_discord_game_sdk)
+add_subdirectory(NImGui NImGui)
+
+add_executable(${PROJECT_NAME} icon.rc utc.cpp main.cpp)
+
+target_include_directories(${PROJECT_NAME} PUBLIC . cmake_discord_game_sdk NImGui)
+
+target_link_libraries(${PROJECT_NAME} PUBLIC cmake_discord_game_sdk NImGui)
+
+install(FILES "${CMAKE_SOURCE_DIR}/data/icon.png"
+        DESTINATION data
+        COMPONENT appData)
+
+install(TARGETS "${PROJECT_NAME}"
+RUNTIME
+DESTINATION "."
+COMPONENT App)
+
+install(RUNTIME_DEPENDENCY_SET NImGui RUNTIME DESTINATION "." COMPONENT App)
+
+set(CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS_SKIP TRUE)
+include(InstallRequiredSystemLibraries)
+install(PROGRAMS ${CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS}
+        DESTINATION "."
+        COMPONENT App)
+install(PROGRAMS "${CMAKE_SOURCE_DIR}/data/discord_game_sdk.dll"
+        DESTINATION "."
+        COMPONENT App)
+
+#
+# CPACK macros below here
+#
+set (CPACK_PACKAGE_NAME "${PROJECT_NAME}")
+set (CPACK_PACKAGE_VENDOR "Tobi-D7")
+set (CPACK_PACKAGE_DESCRIPTION_SUMMARY "Discord RPC Client")
+set (CPACK_PACKAGE_VERSION "2.0.0")
+set (CPACK_PACKAGE_VERSION_MAJOR "2")
+set (CPACK_PACKAGE_VERSION_MINOR "0")
+set (CPACK_PACKAGE_VERSION_PATCH "0")
+set (CPACK_PACKAGE_INSTALL_DIRECTORY "${PROJECT_NAME}")
+set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/License.txt")
+
+
+set(CPACK_COMPONENTS_ALL App appData)
+
+set(CPACK_COMPONENT_APP_DESCRIPTION "DC-Client & required dlls")
+set(CPACK_COMPONENT_APPDATA_DESCRIPTION "Some extra data")
+
+set(CPACK_PACKAGE_ICON "${CMAKE_SOURCE_DIR}\\\\DC.bmp")
+set(CPACK_NSIS_MUI_ICON "${CMAKE_SOURCE_DIR}/DC.ico")
+set(CPACK_NSIS_MUI_UNIICON "${CMAKE_SOURCE_DIR}/DC.ico")
+ 
+
+set(CPACK_NSIS_MENU_LINKS "dc-client" "DC-Client")
+# Must be after the last CPACK macros
+include(CPack)

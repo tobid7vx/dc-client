@@ -1,0 +1,3 @@
+C:/Project33/dc/build/_deps/discord_game_sdk-subbuild/CMakeFiles/discord_game_sdk-populate.dir
+C:/Project33/dc/build/_deps/discord_game_sdk-subbuild/CMakeFiles/ALL_BUILD.dir
+C:/Project33/dc/build/_deps/discord_game_sdk-subbuild/CMakeFiles/ZERO_CHECK.dir
